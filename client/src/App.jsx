@@ -7,7 +7,7 @@ import "./App.css";
 
 import Home from "./Pages/Home";
 import ProductList from "./Pages/ProductList";
-import AboutUs from "./Components/Aboutus";
+import AboutUs from "./Components/AboutUs"
 import ContactUs from "./Pages/ContactUs";
 import ProductDescription from "./Pages/ProductDescription";
 import Navbar from "./Components/Navbar";
