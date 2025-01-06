@@ -34,11 +34,11 @@ const navigation = [
   },
   {
     name: "About us",
-    link: "/about-us",
+    link: "/aboutus",
   },
   {
     name: "Contact us",
-    link: "/contact-us",
+    link: "/contactus",
   },
 ];
 export default function Footer() {
