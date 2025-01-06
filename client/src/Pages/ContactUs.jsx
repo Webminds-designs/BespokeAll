@@ -11,7 +11,6 @@ import {
 } from "react-icons/fa";
 
 const ContactUs = () => {
-  //Change title
   useEffect(() => {
     document.title = "Bespoke Furniture | Contact Us";
   }, []);
@@ -34,7 +33,6 @@ const ContactUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Sending email using EmailJS
     emailjs
       .sendForm(
         "service_w7393o8", // Replace with your service ID
@@ -67,124 +65,84 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-12 px-6 sm:px-8 mt-10">
-      <div className="mx-10 text-center">
-        {/* Contact Form */}
-
-        <div className="flex flex-row justify-center items-center gap-10">
+    <div className="bg-gray-50 py-12 px-4 sm:px-8 mt-10">
+      <div className="mx-auto max-w-[1200px] text-center">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
+          {/* Left Section */}
           <motion.div
-            className="flex flex-col my-10"
+            className="flex flex-col my-10 lg:w-1/2 px-4"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-[50px] max-w-[42vw] px-10 text-left">
+            <h1 className="text-[30px] sm:text-[40px] lg:text-[50px] max-w-[90vw] lg:max-w-[42vw] text-left">
               We are here to assist you with every detail, ensuring your
               questions are answered and your bespoke journey is seamless.
             </h1>
 
-            <div className="flex flex-row justify-between">
-              <div className="flex flex-col justify-between gap-10 px-10 mt-10">
-                <div className="flex flex-col justify-start text-left text-[20px]">
-                  <span className="text-[25px] font-bold">call center</span>
-                  <span>+94 777 866 400</span>
-                  {/* <span>011 2 546 452</span> */}
-                </div>
-
-                <div className="flex flex-col justify-start text-left">
-                  <span className="text-[25px] font-bold">Email</span>
-                  <span className="text-[20px]">
-                    info@artisanbespokefurniture.com
-                  </span>
-                </div>
+            <div className="flex flex-col sm:flex-row sm:justify-between gap-10 px-4 sm:px-0 mt-10">
+              <div className="flex flex-col gap-4 text-left">
+                <span className="text-[20px] font-bold">Call Center</span>
+                <span className="text-[18px]">+94 777 866 400</span>
               </div>
 
-              <div className="flex flex-col justify-between px-10 gap-10 mt-10">
-                <div className="flex flex-col justify-start text-left">
-                  <span className="text-[25px] font-bold">Our location</span>
-                  <span className="text-wrap text-[20px]">
-                    No 4,Sangabo Mawatha, <br />
-                    Borupana,
-                    <br />
-                    Rathmalana, <br />
-                    Sri Lanka
-                  </span>
-                </div>
+              <div className="flex flex-col gap-4 text-left">
+                <span className="text-[20px] font-bold">Email</span>
+                <span className="text-[18px]">
+                  info@artisanbespokefurniture.com
+                </span>
+              </div>
+            </div>
 
-                <div className="flex flex-col">
-                  <span className=" text-gray-800 mb-4 text-[25px] font-bold">
-                    Social Networks
-                  </span>
-                  <div className="flex flex-row justify-center gap-4">
-                    {/* Facebook Tile */}
-                    <div className="flex flex-col items-center">
+            <div className="flex flex-col sm:flex-row sm:justify-between gap-10 px-4 sm:px-0 mt-10">
+              <div className="flex flex-col gap-4 text-left">
+                <span className="text-[20px] font-bold">Our Location</span>
+                <span className="text-[18px]">
+                  No 4, Sangabo Mawatha, <br />
+                  Borupana, <br />
+                  Rathmalana, <br />
+                  Sri Lanka
+                </span>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <span className="text-[20px] font-bold">Social Networks</span>
+                <div className="flex gap-4 justify-center sm:justify-start">
+                  {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map(
+                    (Icon, index) => (
                       <a
-                        href="https://www.facebook.com"
+                        key={index}
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 flex items-center justify-center bg-gray-200 p-2 rounded-full shadow-none hover:bg-brown-300 transition-all duration-300 transform hover:scale-110"
                       >
-                        <FaFacebookF className="w-full h-full text-secondary-100" />
+                        <Icon className="w-full h-full text-secondary-100" />
                       </a>
-                    </div>
-
-                    {/* Twitter Tile */}
-                    <div className="flex flex-col items-center">
-                      <a
-                        href="https://www.twitter.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center  bg-gray-200 p-2 rounded-full shadow-none hover:bg-brown-400  transition-all duration-300 transform hover:scale-110"
-                      >
-                        <FaTwitter className="w-full h-full text-secondary-100" />
-                      </a>
-                    </div>
-
-                    {/* Instagram Tile */}
-                    <div className="flex flex-col items-center">
-                      <a
-                        href="https://www.instagram.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center  bg-gray-200 p-2 rounded-full shadow-none hover:bg-brown-400  transition-all duration-300 transform hover:scale-110"
-                      >
-                        <FaInstagram className="w-full h-full text-secondary-100" />
-                      </a>
-                    </div>
-
-                    {/* LinkedIn Tile */}
-                    <div className="flex flex-col items-center">
-                      <a
-                        href="https://www.linkedin.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center  bg-gray-200 p-2 rounded-full shadow-none hover:bg-brown-400 transition-all duration-300 transform hover:scale-110"
-                      >
-                        <FaLinkedinIn className="w-full h-full text-secondary-100" />
-                      </a>
-                    </div>
-                  </div>
+                    )
+                  )}
                 </div>
               </div>
             </div>
           </motion.div>
 
+          {/* Right Section - Contact Form */}
           <motion.div
-            className="bg-white shadow-lg rounded-lg p-8 max-w-3xl mx-auto"
+            className="bg-white shadow-lg rounded-lg p-6 sm:p-8 w-full lg:w-1/2"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
+            <h1 className="text-[24px] sm:text-[30px] font-bold text-gray-800 mb-6">
               Connect with us
             </h1>
-            <p className="text-[24px] text-gray-600 mb-6 px-10">
+            <p className="text-[18px] text-gray-600 mb-6 px-4 sm:px-10">
               Each piece we create carries a story—yours. Share your dreams with
               us, and our artisans will shape them into timeless designs crafted
               exclusively for your space.
             </p>
             <form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 sm:grid-cols- gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 sm:px-0">
                 <div className="flex flex-col">
                   <input
                     type="text"
@@ -211,7 +169,7 @@ const ContactUs = () => {
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-col">
+              <div className="mt-6 flex flex-col px-4 sm:px-0">
                 <input
                   type="text"
                   id="subject"
@@ -224,7 +182,7 @@ const ContactUs = () => {
                 />
               </div>
 
-              <div className="mt-6 flex flex-col">
+              <div className="mt-6 flex flex-col px-4 sm:px-0">
                 <textarea
                   id="message"
                   name="message"
@@ -236,17 +194,17 @@ const ContactUs = () => {
                   required
                 ></textarea>
               </div>
-              <div className="flex flex-row gap-4 text-[18px]">
+              <div className="flex flex-col sm:flex-row gap-4 text-[18px] px-4 sm:px-0">
                 <button
                   type="button"
-                  className="mt-6 w-[150px] py-2 h-10 text-[#533B30] border-[1.5px] border-[#7a6358] bg-white font-semibold rounded-[20px] shadow-md hover:bg-[#e2e2e2] focus:outline-none focus:ring-2 focus:ring-[#533B30]"
+                  className="mt-6 w-full sm:w-[150px] py-2 h-10 text-[#533B30] border-[1.5px] border-[#7a6358] bg-white font-semibold rounded-[20px] shadow-md hover:bg-[#e2e2e2] focus:outline-none focus:ring-2 focus:ring-[#533B30]"
                   onClick={handleClear}
                 >
                   Clear
                 </button>
                 <button
                   type="submit"
-                  className="mt-6 w-[150px] py-2 h-10 bg-[#533B30] text-white font-semibold rounded-[20px] shadow-md hover:bg-[#3e2c21] focus:outline-none focus:ring-2 focus:ring-[#533B30]"
+                  className="mt-6 w-full sm:w-[150px] py-2 h-10 bg-[#533B30] text-white font-semibold rounded-[20px] shadow-md hover:bg-[#3e2c21] focus:outline-none focus:ring-2 focus:ring-[#533B30]"
                 >
                   Send a Message
                 </button>
@@ -256,10 +214,9 @@ const ContactUs = () => {
         </div>
 
         {/* Office Address & Map */}
-        <div className="m-auto mt-20">
+        <div className="m-auto mt-20 px-4 sm:px-0">
           <div className="relative gap-12 rounded-[30px] overflow-hidden">
-            {/* Embed Google Map */}
-            <div className=" h-72 shadow-xl">
+            <div className="h-72 shadow-xl">
               <iframe
                 width="100%"
                 height="100%"
