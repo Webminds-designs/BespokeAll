@@ -11,7 +11,7 @@ import cart from "./Routes/CartRoute.js";
 import purchaseHistoryRoute from "./Routes/PurchaseHistoryRoute.js";
 
 dotenv.config();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 
