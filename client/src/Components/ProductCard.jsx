@@ -25,7 +25,11 @@ export default function ProductCard({ products }) {
           }}
         >
           {/* Product Image with SkeletonLoader */}
-          <ProductImage imageUrl={product.image} productName={product.name} />
+          <ProductImage
+            imageUrl={product.image}
+            productName={product.name}
+            id={product._id}
+          />
 
           {/* Overlay for Price and Icon */}
           <div className="absolute bottom-0 left-0 right-0 h-fit bg-secondary-100-low px-4 py-2 flex justify-between items-center">
@@ -55,13 +59,13 @@ export default function ProductCard({ products }) {
   );
 }
 
-const ProductImage = ({ imageUrl, productName }) => {
+const ProductImage = ({ imageUrl, productName, id }) => {
   const [loading, setLoading] = useState(true); // Track loading state for the image
 
   return (
     <div className="w-full h-full relative">
       {loading && <SkeletonLoader />} {/* Show skeleton while loading */}
-      <Link to={`/product-description/${productName}`}>
+      <Link to={`/product-description/${id}`}>
         <img
           src={imageUrl}
           alt={productName}
