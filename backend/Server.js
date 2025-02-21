@@ -27,7 +27,8 @@ const allowedOrigins = [
   // "http://localhost:5173",
   // "http://localhost:3001",
   "https://artisanbespokefurniture.com",
-  "https://www.artisanbespokefurniture.com/"
+  "https://www.artisanbespokefurniture.com/",
+  "https://www.artisanbespokefurniture.com"
 ];
 
 app.use(
