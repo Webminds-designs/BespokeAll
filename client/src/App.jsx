@@ -12,6 +12,9 @@ import ContactUs from "./Pages/ContactUs";
 import ProductDescription from "./Pages/ProductDescription";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import TermsAndConditions from "./Pages/TermsAndConditions";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import ReturnPolicy from "./Pages/ReturnPolicy";
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
           path="product-description/:id"
           element={<ProductDescription />}
         />
+        <Route path="terms" element={<TermsAndConditions />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="return-policy" element={<ReturnPolicy />} />
       </Routes>
       <Footer />
     </BrowserRouter>

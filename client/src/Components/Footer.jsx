@@ -105,8 +105,8 @@ export default function Footer() {
             <a href="/privacy-policy" className="hover:underline">
               Privacy policy
             </a>
-            <a href="/cookies" className="hover:underline">
-              Cookies
+            <a href="/return-policy" className="hover:underline">
+             Return policy
             </a>
           </div>
         </div>
