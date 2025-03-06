@@ -99,15 +99,24 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/70">
           <p className="text-[20px]">© 2024 Copyright AllRights reserved</p>
           <div className="flex space-x-8 mt-2 md:mt-0 text-[20px]">
-            <a href="/terms" className="hover:underline">
+            {/* <a href="/terms" className="hover:underline">
               Terms of services
-            </a>
-            <a href="/privacy-policy" className="hover:underline">
+            </a> */}
+            <Link to="/terms" className="hover:underline">
+              Terms of services
+            </Link>
+            <Link to="/privacy-policy" className="hover:underline">
+              Privacy policy
+            </Link>
+            {/* <a href="/privacy-policy" className="hover:underline">
               Privacy policy
             </a>
             <a href="/return-policy" className="hover:underline">
              Return policy
-            </a>
+            </a> */}
+            <Link to="/return-policy" className="hover:underline">
+              Return policy
+            </Link>
           </div>
         </div>
       </div>
