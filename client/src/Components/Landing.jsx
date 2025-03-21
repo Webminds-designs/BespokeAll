@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import background_img from "../assets/Landing_Background.png";
+// import background_img from "../assets/Landing_Background.png";
+import background_img from "../assets/optImages/37.jpg";
 
 function Landing() {
   const textRef = useRef(null);

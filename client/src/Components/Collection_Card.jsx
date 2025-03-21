@@ -1,10 +1,12 @@
 import React from "react";
-import img1 from "../assets/Collection/image1.png";
-import img2 from "../assets/Collection/image2.png";
-import img3 from "../assets/Collection/image3.png";
-import img4 from "../assets/Collection/image4.png";
-import img5 from "../assets/Collection/image5.png";
-import img6 from "../assets/Collection/image6.png";
+
+import img1 from "../assets/optImages/19.jpg";
+import img2 from "../assets/optImages/20.jpg";
+import img3 from "../assets/optImages/22.jpg";
+import img4 from "../assets/optImages/23.jpg";
+import img5 from "../assets/optImages/24.jpg";
+import img6 from "../assets/optImages/25.jpg";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";

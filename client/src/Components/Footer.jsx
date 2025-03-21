@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
-import logo from "../assets/artisan-White.png";
+import logo from "../assets/optImages/artisan-White.png";
 
 const social = [
   {

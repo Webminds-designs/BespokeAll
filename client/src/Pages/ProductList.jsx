@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import coverImg from "../assets/images/img13.png";
+// import coverImg from "../assets/images/img13.png";
+import coverImg from "../assets/optImages/31.jpg";
 import Products from "../Components/Products";
 import { motion } from "framer-motion";
 
