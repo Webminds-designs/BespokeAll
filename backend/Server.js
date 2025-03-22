@@ -9,11 +9,13 @@ import cloudinary from "cloudinary";
 import productsRoute from "./Routes/ProductRoute.js";
 import cart from "./Routes/CartRoute.js";
 import purchaseHistoryRoute from "./Routes/PurchaseHistoryRoute.js";
+import compression from "compression";
 
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 
 const app = express();
+app.use(compression());
 
 cloudinary.config({
   cloud_name: process.env.cloud_name,
@@ -28,7 +30,7 @@ const allowedOrigins = [
   // "http://localhost:3001",
   "https://artisanbespokefurniture.com",
   "https://www.artisanbespokefurniture.com/",
-  "https://www.artisanbespokefurniture.com"
+  "https://www.artisanbespokefurniture.com",
 ];
 
 app.use(
