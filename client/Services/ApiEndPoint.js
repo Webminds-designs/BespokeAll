@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://artisanbespokefurniture.com",
+  // baseURL: "https://artisanbespokefurniture.com",
+  baseURL: "http://localhost:4000/",
   Headers: {
     "Content-Type": "application/json",
   },
