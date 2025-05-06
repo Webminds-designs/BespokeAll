@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import background_img from "../assets/optImages/37.jpg";
 import Model from "./Model";
 
@@ -10,35 +8,66 @@ const Footer_New = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start end", "end start"], // Adjust how early/late the effect starts
+    offset: ["start end", "end start"],
   });
 
-  // Scale from 0.8 to 1.2 based on scroll
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.6]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
   const currentYear = new Date().getFullYear();
+
+  const modelContainerRef = useRef(null);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [showCursor, setShowCursor] = useState(false);
+
+  const handleMouseMove = (e) => {
+    const rect = modelContainerRef.current.getBoundingClientRect();
+    setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
   return (
     <div className="bg-[#533B30] text-[#ded9cf] md:min-h-screen">
-      <footer className="text-[#ded9cf] px-8 md:pt-12 py-4 bg-[#533B30]  ">
+      <footer className="text-[#ded9cf] px-8 py-4 bg-[#533B30]">
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row items-start md:items-end  ">
+        <div className="flex flex-col md:flex-row items-start md:items-end">
           <div className="md:w-1/2">
-            <h2 className="leading-tight text-left md:text-left  max-w-full">
-              <p className=" w-full h-fit  md:px-6 text-left text-4xl md:text-5xl lg:text-7xl  font-semibold leading-relaxed mt-8">
+            <h2 className="leading-tight text-left max-w-full">
+              <p className="w-full h-fit md:px-6 text-left text-4xl md:text-5xl lg:text-7xl font-semibold leading-relaxed mt-8">
                 Legacy in Every Detail,
-                <br></br> Luxury in Every Piece.
+                <br />
+                Luxury in Every Piece.
               </p>
             </h2>
           </div>
 
-          {/* Placeholder for 3D model */}
-          <div className="md:w-1/2 w-full min-h-[100px] relative justify-end flex text-end m-16 ml-0">
+          {/* Model with Custom Cursor */}
+          <div
+            ref={modelContainerRef}
+            className="md:w-1/2 w-full min-h-[100px] relative justify-end flex text-end m-16 ml-0"
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setShowCursor(true)}
+            onMouseLeave={() => setShowCursor(false)}
+          >
             <Model />
+
+            {/* Custom Cursor */}
+            {showCursor && (
+              <div
+                className="pointer-events-none absolute z-50"
+                style={{
+                  left: cursorPos.x - 40,
+                  top: cursorPos.y - 40,
+                }}
+              >
+                <div className="w-20 h-20 rounded-full border-2 border-white flex items-center justify-center text-white text-sm font-semibold bg-transparent backdrop-blur-sm">
+                  Drag
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
         {/* Circular Model & Email */}
-        <div className="flex flex-col md:flex-row  py-8  lg:mt-28">
+        <div className="flex flex-col md:flex-row py-6 lg:mt-28">
           {/* Circular Element */}
           <div className="md:w-1/2 w-full flex justify-start  relative m-5 pb-1  md:pb-20 z-50">
             <div className="relative ">
@@ -138,11 +167,11 @@ const Footer_New = () => {
             </div>
           </div>
 
-          {/* Email Link */}
-          <div className="md:w-1/2 flex flex-col justify-start md:justify-end items-center  md:items-end mt-32 md:mt-36  lg:mt-0">
+          {/* Email */}
+          <div className="md:w-1/2 flex flex-col justify-start md:justify-end items-center md:items-end mt-32 md:mt-36 lg:mt-0">
             <a
               href="mailto:info@artisanbespokefurniture.com"
-              className="text-xl sm:text-3xl md:text-5xl  font-semibold underline decoration-2 underline-offset-4 hover:opacity-80 transition text-right"
+              className="text-xl sm:text-3xl md:text-5xl font-semibold underline decoration-2 underline-offset-4 hover:opacity-80 transition text-right"
             >
               ↗info@artisanbespokefurniture.com
             </a>
@@ -150,7 +179,7 @@ const Footer_New = () => {
         </div>
 
         {/* Social Links */}
-        <div className="flex flex-wrap justify-center md:justify-between gap-6 md:gap-4 text-lg sm:text-xl md:text-3xl font-medium py-">
+        <div className="flex flex-wrap justify-center md:justify-between gap-6 md:gap-4 text-sm sm:text-xl md:text-xl font-medium px-8">
           <a href="https://instagram.com" className="hover:underline">
             Instagram
           </a>
@@ -165,14 +194,14 @@ const Footer_New = () => {
           </a>
         </div>
 
-        {/* Bottom Section: Policies */}
-        <div className="mt-4 border-t border-[#533B30] pt-1">
+        {/* Bottom Section */}
+        <div className="mt-4 border-t border-[#533B30] pt-2 px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
             <p className="text-[16px] sm:text-[18px] md:text-[20px] text-center md:text-left">
               © {currentYear} Copyright All Rights Reserved .Developed by{" "}
               <a href="https://webmindsdesigns.com/">Webminds</a>
             </p>
-            <div className="flex flex-row sm:flex-row sm:space-x-6 text-[16px] sm:text-[18px] md:text-[20px] text-center md:text-left">
+            <div className="flex flex-row sm:space-x-6 text-[16px] sm:text-[18px] md:text-[20px] text-center md:text-left">
               <Link to="/terms" className="hover:underline">
                 Terms of services
               </Link>
@@ -187,11 +216,11 @@ const Footer_New = () => {
         </div>
       </footer>
 
+      {/* Scrolling Text */}
       <motion.div
         ref={targetRef}
         style={{ scale, opacity }}
-        className="text-nowrap h-fit  whitespace-nowrap text-center font-bold justify-center items-center overflow-hidden   
-         text-[10vw] sm:text-[8vw] md:text-[10vw] lg:text-[5vw] xl:text-[12vw]"
+        className="text-nowrap h-fit w-screen absolute whitespace-nowrap text-center font-bold justify-center items-center overflow-hidden text-[10vw] sm:text-[8vw] md:text-[10vw] lg:text-[5vw] xl:text-[12vw] tracking-wider"
       >
         BESPOKE FURNITURE
       </motion.div>
