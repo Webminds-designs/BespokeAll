@@ -19,14 +19,14 @@ const Footer_New = () => {
     const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
     const currentYear = new Date().getFullYear();
     return (
-        <div className='bg-[#533B30] text-[#ded9cf] md:max-h-screen'>
+        <div className='bg-[#533B30] text-[#ded9cf] md:min-h-screen'>
             <footer className="text-[#ded9cf] px-8 md:px-16 py-4 mdpy-8 bg-[#533B30]  ">
 
                 {/* Top Section */}
-                <div className="flex flex-col md:flex-row items-start md:items-center  gap-6">
+                <div className="flex flex-col md:flex-row items-start md:items-end  ">
                     <div className="md:w-1/2">
                         <h2 className="leading-tight text-left md:text-left  max-w-full">
-                            <p className=" w-full h-fit  md:px-6 text-left text-3xl md:text-5xl lg:text-7xl  font-semibold leading-relaxed mt-8">
+                            <p className=" w-full h-fit  md:px-6 text-left text-4xl md:text-5xl lg:text-7xl  font-semibold leading-relaxed mt-8">
                                 Legacy in Every Detail,
                                 <br></br> Luxury in Every Piece.
                             </p>
@@ -35,7 +35,7 @@ const Footer_New = () => {
                     </div>
 
                     {/* Placeholder for 3D model */}
-                    <div className="md:w-1/2 w-96 min-h-[100px] relative"><Model /></div>
+                    <div className="md:w-1/2 w-full min-h-[100px] relative justify-end flex text-end m-16 ml-0"><Model /></div>
                 </div>
 
                 {/* Circular Model & Email */}
@@ -99,7 +99,7 @@ const Footer_New = () => {
 
 
                     {/* Email Link */}
-                    <div className="md:w-1/2 flex flex-col justify-start md:justify-end items-center  md:items-end mt-40 md:mt-36  lg:mt-0">
+                    <div className="md:w-1/2 flex flex-col justify-start md:justify-end items-center  md:items-end mt-32 md:mt-36  lg:mt-0">
                         <a
                             href="mailto:info@artisanbespokefurniture.com"
                             className="text-xl sm:text-3xl md:text-5xl  font-semibold underline decoration-2 underline-offset-4 hover:opacity-80 transition text-right"
@@ -137,7 +137,7 @@ const Footer_New = () => {
             <motion.div
                 ref={targetRef}
                 style={{ scale, opacity }}
-                className="text-nowrap whitespace-nowrap text-center font-bold justify-center items-center overflow-hidden   
+                className="text-nowrap h-fit  whitespace-nowrap text-center font-bold justify-center items-center overflow-hidden   
          text-[10vw] sm:text-[8vw] md:text-[10vw] lg:text-[5vw] xl:text-[12vw]"
             >
                 BESPOKE FURNITURE
