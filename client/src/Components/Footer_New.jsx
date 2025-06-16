@@ -220,7 +220,7 @@ const Footer_New = () => {
       <motion.div
         ref={targetRef}
         style={{ scale, opacity }}
-        className="text-nowrap h-fit w-screen absolute whitespace-nowrap text-center font-bold justify-center items-center overflow-hidden text-[10vw] sm:text-[8vw] md:text-[10vw] lg:text-[5vw] xl:text-[12vw] tracking-wider"
+        className="text-nowrap h-fit w-screen whitespace-nowrap text-center font-bold justify-center items-center overflow-hidden text-[10vw] sm:text-[8vw] md:text-[10vw] lg:text-[5vw] xl:text-[12vw] tracking-wider"
       >
         BESPOKE FURNITURE
       </motion.div>
